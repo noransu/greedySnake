@@ -32,6 +32,8 @@ class GameControl {
    * ArrowLeft
    * ArrowRight
    * ArrowDown
+   * TODO
+   * 增加防抖
    */
   keydownHandler(event: KeyboardEvent) {
     if (this.direction === event.key) return;
