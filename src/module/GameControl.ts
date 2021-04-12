@@ -10,8 +10,8 @@ class GameControl {
   direction: string = 'Right';
   // 设置蛇是否存活
   isLive: boolean = true;
-  private XDirectionEvents: string[] = ['ArrowUp', 'Up', 'ArrowDown', "Down"];
-  private YDirectionEvents: string[] = ['ArrowLeft', 'Left', 'ArrowRight', "Right"];
+  private YDirectionEvents: string[] = ['ArrowUp', 'Up', 'ArrowDown', "Down"];
+  private XDirectionEvents: string[] = ['ArrowLeft', 'Left', 'ArrowRight', "Right"];
 
   constructor(canThroughWall: boolean = false) {
     this.snake = new Snake(canThroughWall);
@@ -42,14 +42,14 @@ class GameControl {
       case 'ArrowUp':
       case 'Down':
       case 'ArrowDown':
-        if (this.XDirectionEvents.includes(this.direction)) return;
+        if (this.YDirectionEvents.includes(this.direction)) return;
         this.direction = event.key
         break;
       case 'Left':
       case 'ArrowLeft':
       case 'Right':
       case 'ArrowRight':
-        if (this.YDirectionEvents.includes(this.direction)) return;
+        if (this.XDirectionEvents.includes(this.direction)) return;
         this.direction = event.key
         break;
     }
