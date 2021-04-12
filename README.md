@@ -1,0 +1,2 @@
+# greedySnake
+* typescript * less
