@@ -1,0 +1,80 @@
+@bg-color: #b7d4a8;
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: bold 20px "Courier";
+}
+
+#main {
+  height: 420px;
+  width: 360px;
+  background: @bg-color;
+  margin: 100px auto;
+  border: 10px solid black;
+  border-radius: 40px;
+  display: flex;
+  // 设置主轴方向为自上而下
+  flex-flow: column;
+  // 设置辅轴方向为居中
+  align-items: center;
+  // 设置主轴的对齐方向
+  justify-content: space-around;
+
+  #stage {
+    width: 304px;
+    height: 304px;
+    border: 2px solid black;
+    position: relative;
+
+    #snake {
+      & > div {
+        width: 10px;
+        height: 10px;
+        background-color: #000;
+        // 让蛇的身体看起来不连贯
+        border: 1px solid @bg-color;
+        position: absolute;
+      }
+    }
+    // 普通的食物样式
+    // #food {
+    //   width: 10px;
+    //   height: 10px;
+    //   background-color: #000;
+    //   border: 1px solid @bg-color;
+    //   position: absolute;
+    //   left: 40px;
+    //   top: 100px;
+    // }
+
+    // #字类型的食物样式
+    #food {
+      width: 10px;
+      height: 10px;
+      position: absolute;
+      left: 40px;
+      top: 100px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: space-between;
+      & > div {
+        width: 4px;
+        height: 4px;
+        background-color: #000;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  #score-panel {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+  }
+}
